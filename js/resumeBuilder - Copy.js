@@ -97,8 +97,10 @@ var projects={
 	]
 };
 
+
+
 if(bio.skills.length>0){
-	$("#header").append(HTMLskillsStart);
+	$("#header").append(HTMLskillsStart;
 	var formattedSkill=HTMLskills.replace("%data%",bio.skills[0]);
 	$("#skills").append(formattedSkill);
 	formattedSkill=HTMLskills.replace("%data%",bio.skills[1]);
@@ -112,14 +114,18 @@ if(bio.skills.length>0){
 function displayWork(){
 	for (job in work.jobs) {
 	$("#workExperience").append(HTMLworkStart);
+
 	var formttedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-	var formttedTitle=HTMLworkTitle.replace("%data%",work.jobs[job].title);
+	var formttedTitle=HTMLworkTiltle.replace("%data%",work.jobs[job].title);
 	var formttedEmployerTitle=formttedEmployer+formttedTitle;
-	$(".work-entry:last").append(formttedEmployerTitle);
+
+	%(".work-entry:last").append(formttedEmployerTitle);
+
 	var formttedDates=HTMLworkDates.replace("%data%",work.jobs[job].dates);
-	$(".work-entry:last").append(formttedDates);
+	%(".work-entry:last").append(formttedDates);
+	
 	var formttedDescription=HTMLworkDescription.replace("%data%",work.jobs[job].description);
-	$(".work-entry:last").append(formttedDescription);
+	%(".work-entry:last").append(formttedDescription);
 	}
 }
 
@@ -151,7 +157,7 @@ function inName(){
 	return name[0]+" "+name[1];
 }
 
-/**$("#main").append(intenationalizeButton);**/
+$("#main").append(intenationalizeButton);
 $("#mapdiv").append(googleMap);
 
 projects.display=function(){
@@ -159,18 +165,18 @@ projects.display=function(){
 	$("#wprojects").append(HTMLprojectStart);
 
 	var formttedTitle=HTMLprojectTiltle.replace("%data%",projects.projects[project].title);
-	$(".project-entry:last").append(formttedTitle);
+	%(".project-entry:last").append(formttedTitle);
 
 	var formttedDates=HTMLprojectDates.replace("%data%",projects.projects[project].dates);
-	$(".project-entry:last").append(formttedDates);
+	%(".project-entry:last").append(formttedDates);
 
 	var formttedDescription=HTMLprojectDescription.replace("%data%",projects.projects[project].description);
-	$(".project-entry:last").append(formttedDescription);
+	%(".project-entry:last").append(formttedDescription);
 
 	if (projects.projects[project].images.length>0) {
 		for(image in projects.projects[project].images){
 			var formttedImage=HTMLprojectImage.replace("%data%",projects.projects[project].description.images[image]);
-			$(".project-entry:last").append(formttedImage);
+			%(".project-entry:last").append(formttedImage);
 		}
 	};
 	}

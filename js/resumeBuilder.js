@@ -18,14 +18,14 @@ var education={
 	"schools":[
 	{
 		"name":"Mbecity",
-		"city":"Harare",
+		"location":"Harare",
 		"degree":"BA",
 		"major":"Computer Science",
 		"dates":"2001-2003"
 	},
 	{
 		"name":"Mbare",
-		"city":"Masvingo",
+		"location":"Masvingo",
 		"degree":"BA",
 		"major":"Computer Science",
 		"dates":"2003-2005"
@@ -51,21 +51,21 @@ var work={
 	"jobs":[
 	{
 		"employer":"Musorowegomo",
-		"city":"Harare",
+		"location":"Harare",
 		"title":"Systems Administrator",
 		"dates":"2001-2003",
 		"description":"who moved my cheese and puit in my congo.who moved my cheese and puit in my congo"
 	},
 	{
 		"employer":"Mombe Chingwa",
-		"city":"Cape Town",
+		"location":"Cape Town",
 		"title":"Systems Administrator",
 		"dates":"2001-2003",
 		"description":"who moved my cheese and puit in my congo.who moved my cheese and puit in my congo."
 	},
 	{
 		"employer":"Sadza neNyama",
-		"city":"London",
+		"location":"London",
 		"title":"Systems Administrator",
 		"dates":"2001-2003",
 		"description":"who moved my cheese and puit in my congo.who moved my cheese and puit in my congo"
@@ -122,7 +122,7 @@ function displayWork(){
 		var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[job].title);
 		var formattedEmployerTitle=formattedEmployer+formattedTitle;
 		var formattedDates=HTMLworkDates.replace("%data%",work.jobs[job].dates);
-		var formattedCity=HTMLworkLocation.replace("%data%",work.jobs[job].city);
+		var formattedCity=HTMLworkLocation.replace("%data%",work.jobs[job].location);
 		var formattedDescription=HTMLworkDescription.replace("%data%",work.jobs[job].description);
 		$(".work-entry:last").append(formattedEmployerTitle,formattedDates,formattedCity,formattedDescription);
 	}
@@ -148,7 +148,7 @@ function educationInfo(){
 		var schoolFormattedDegree=HTMLschoolDegree.replace("%data%",education.schools[school].degree);
 		var schoolFormattedName= schoolFormattedTitle+schoolFormattedDegree;
 		var schoolFormattedDates=HTMLschoolDates.replace("%data%",education.schools[school].dates);
-		var schoolFormattedLocation=HTMLschoolLocation.replace("%data%",education.schools[school].city);
+		var schoolFormattedLocation=HTMLschoolLocation.replace("%data%",education.schools[school].location);
 		var schoolFormattedMajor=HTMLschoolMajor.replace("%data%",education.schools[school].major);
 		$('.education-entry:last').append(schoolFormattedName, schoolFormattedDates, schoolFormattedLocation, schoolFormattedMajor);
 	}
@@ -165,14 +165,14 @@ function educationInfo(){
 */
 }
 
-(function makeSite(){
-	$('#mapDiv').append(googleMap);
+$('#mapDiv').append(googleMap);	
 	bioInfo();
 	displayWork();
 	workProject();
 	educationInfo();
 	initializeMap();
-}());
+
+
 
 /**
 $(document).click(function(loc){

@@ -1,4 +1,6 @@
 
+
+// biography infomation
 var bio={
 	"name":"Dereck Zenda",
 	"role":"Web Developer",
@@ -14,6 +16,7 @@ var bio={
 	"biopic":"images/fry.jpg"
 };
 
+//education information
 var education={
 	"schools":[
 	{
@@ -49,6 +52,7 @@ var education={
 	]
 };
 
+// employment history information
 var work={
 	"jobs":[
 	{
@@ -78,7 +82,7 @@ var work={
 	]
 };
 
-
+//projects completed or participated in
 var projectsDone={
 	"workProjects":[
 	{
@@ -98,6 +102,7 @@ var projectsDone={
 	]
 };
 
+//function to append bio infomation to #header
 function bioInfo(){
 	var formattedName = HTMLheaderName.replace('%data%', bio.name);
 	var formattedJob = HTMLheaderRole.replace('%data%', bio.role);
@@ -121,7 +126,7 @@ function bioInfo(){
 
 }
 
-
+//function to append work to #workExperience
 function displayWork(){
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
@@ -136,6 +141,7 @@ function displayWork(){
 	}
 }
 
+//function to append work to #projects
 function workProject(){
 	for (project in projectsDone.workProjects) {
 		$("#projects").append(HTMLprojectStart);
@@ -149,7 +155,7 @@ function workProject(){
 }
 
 
-
+//function to append education to #education
 function educationInfo(){
 	for (school in education.schools) {
 		$("#education").append(HTMLschoolStart);
@@ -188,6 +194,8 @@ function educationInfo(){
 	initializeMap();
 }());
 
+//create button to internationalize Name in bio
+$("#main").append(internationalizeButton);
 function inName(){
 	name=name.trim().split(" ");
 	name[1]=name[1].toUpperCase();
@@ -196,4 +204,4 @@ function inName(){
 	return name[0]+" "+name[1];
 }
 
-$("#main").append(internationalizeButton);
+

@@ -3,51 +3,53 @@
 // biography infomation
 var bio={
 	"name":"Dereck Zenda",
-	"role":"Web Developer",
+	"role":"Front-End Web Developer",
 	"contacts":{
-		"mobile":"0718776643",
-		"github":"zendad",
-		"twitter":"@danzenda",
-		"location":"Johannesburg",
-		"email":"dereck.zenda@gmail.com"
+		"mobile":"images/mobile.jpg",
+		"github":"images/github.jpg",
+		"twitter":"images/twitter.jpg",
+		"location":"images/location.jpg",
+		"email":"images/email.jpg",
+		"linkedin":"images/linkedin.jpg",
+		"blog":"images/blog.jpg"
 	},
-	"skills":["Programming","Java","Javascript","HTML"],
-	"welcomeMessage":"Welcome to my cv",
-	"biopic":"images/fry.jpg"
+	"skills":["Python","Java","Javascript","HTML5"],
+	"welcomeMessage":"Great Front-End Ninja",
+	"biopic":"images/profile.jpg"
 };
 
 //education information
 var education={
 	"schools":[
 	{
-		"name":"Mbecity",
-		"location":"Harare",
-		"degree":"BA",
+		"name":"Harare Polytechnic",
+		"location":"Roodepoort,Johannesburg",
+		"degree":"ND",
 		"major":"Computer Science",
-		"dates":"2001-2003",
-		"url":"http://www.example.com"
+		"dates":"1999-2001",
+		"url":"http://www.hararepoly.com"
 	},
 	{
-		"name":"Mbare",
-		"location":"Masvingo",
-		"degree":"BA",
+		"name":"Masvingo Polytechnic",
+		"location":"Rivonia,Johannesburg",
+		"degree":"HND",
 		"major":"Computer Science",
-		"dates":"2003-2005",
-		"url":"http://www.example.com"
+		"dates":"2001-2003",
+		"url":"http://www.masvingopoly.com"
 	}
 	],
 	"onlineCourses":[
 		{
-		"name":"Orocity",
-		"onlinecourse":"Sugar Cane",
-		"dates":"2001-2003",
-		"url":"http://www.example.com"
+		"name":"Udacity",
+		"onlinecourse":"Front-End Web Developer Nanodegree",
+		"dates":"10/2014-01/2015",
+		"url":"https://www.udacity.com/course/nd001"
 	},
 	{
-		"name":"Maracity",
-		"onlinecourse":"Soda Power",
-		"dates":"2001-2003",
-		"url":"http://www.example.com"
+		"name":"Coursera",
+		"onlinecourse":"Mobile Cloud Computing with Android",
+		"dates":"03/2014-12/2014",
+		"url":"https://www.coursera.org/specialization/mobilecloudcomputing/2?utm_medium=listingPage"
 	}
 	]
 };
@@ -56,26 +58,26 @@ var education={
 var work={
 	"jobs":[
 	{
-		"employer":"Musorowegomo",
-		"location":"Harare",
-		"title":"Systems Administrator",
-		"dates":"2001-2003",
-		"url":"http://www.dereckzenda.com",
+		"employer":"Mula Systems Plc",
+		"location":"Parktown,Johannesburg",
+		"title":"Systems Engineer",
+		"dates":"2010-Current",
+		"url":"http://www.mula.com",
 		"description":"who moved my cheese and puit in my congo.who moved my cheese and puit in my congo"
 	},
 	{
-		"employer":"Mombe Chingwa",
-		"location":"Cape Town",
+		"employer":"ABC Holdings",
+		"location":"Sandton,Johannesburg",
 		"title":"Systems Administrator",
-		"dates":"2001-2003",
+		"dates":"2004-2009",
 		"url":"http://www.mazanda.com",
 		"description":"who moved my cheese and puit in my congo.who moved my cheese and puit in my congo."
 	},
 	{
-		"employer":"Sadza neNyama",
-		"location":"London",
-		"title":"Systems Administrator",
-		"dates":"2001-2003",
+		"employer":"Donbas Mobile",
+		"location":"Randburg,Johannesburg",
+		"title":"Linux Administrator",
+		"dates":"2000-2003",
 		"url":"http://www.mundawangu.com",
 		"description":"who moved my cheese and puit in my congo.who moved my cheese and puit in my congo"
 	}
@@ -86,17 +88,17 @@ var work={
 var projectsDone={
 	"workProjects":[
 	{
-		"title":"Udacity",
-		"dates":"2001-2003",
-		"url":"http://www.mundawangu.com",
-		"description":"sadza nemuriwo",
+		"title":"Zenda Job Portal",
+		"dates":"2005-2009",
+		"url":"http://www.zenda.com",
+		"description":"Front-End project - a job portal for Linux System Engineers",
 		"images":"images/project1.png"
 	},
 	{
-		"title":"Udacity",
-		"dates":"2001-2003",
+		"title":"Mandu Job Portal",
+		"dates":"2000-2004",
 		"url":"http://www.mundawangu.com",
-		"description":"chingwa chine dovi",
+		"description":"Front-End project - a job portal for Microsoft System Engineers",
 		"images":"images/project2.png"
 	}
 	]
@@ -106,17 +108,19 @@ var projectsDone={
 function bioInfo(){
 	var formattedName = HTMLheaderName.replace('%data%', bio.name);
 	var formattedJob = HTMLheaderRole.replace('%data%', bio.role);
- 	var formattedPic = HTMLbioPic.replace('%data%', 'images/fry.jpg');
+ 	var formattedPic = HTMLbioPic.replace('%data%', 'images/profile.jpg');
 	var formattedMessage = HTMLWelcomeMsg.replace('%data%', bio.welcomeMessage);
 	var formattedNumber = HTMLmobile.replace('%data%', bio.contacts.mobile);
 	var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
 	var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
 	var formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
 	var formattedLocation = HTMLlocation.replace('%data%',bio.contacts.location);
-	$('#header').prepend(formattedName, formattedJob);
-	$('#header').append(formattedPic, formattedMessage, HTMLskillsStart);
-	$('#topContacts').append(formattedNumber, formattedEmail, formattedTwitter, formattedGithub, formattedLocation);
-	$('#footerContacts').append(formattedNumber, formattedEmail, formattedTwitter, formattedGithub, formattedLocation);
+	var formattedLinkedin = HTMLlinkedin.replace('%data%',bio.contacts.linkedin);
+	var formattedBlog = HTMLblog.replace('%data%',bio.contacts.blog);
+	$('#header').prepend(formattedName,formattedPic, formattedJob);
+	$('#header').append(formattedMessage, HTMLskillsStart);
+	$('#topContacts').append(formattedNumber, formattedEmail, formattedGithub, formattedLinkedin, formattedTwitter, formattedBlog, formattedLocation);
+	$('#footerContacts').append(formattedNumber, formattedEmail, formattedGithub, formattedLinkedin, formattedTwitter, formattedBlog, formattedLocation);
 	if(bio.skills.length>0){
 		for (skill in bio.skills){
 			var formattedSkill=HTMLskills.replace("%data%",bio.skills[skill]);
@@ -194,14 +198,16 @@ function educationInfo(){
 	initializeMap();
 }());
 
+
+
 //create button to internationalize Name in bio
-$("#main").append(internationalizeButton);
-function inName(){
-	name=name.trim().split(" ");
-	name[1]=name[1].toUpperCase();
-	name[0]=name[0].slice(0,1).toUpperCase()+name[0].slice(1).toLowerCase();
+function inName(name){
+    name = name.trim().split(" ");
+    console.log(name);
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
 
-	return name[0]+" "+name[1];
+    return name[0] + " " + name[1];
 }
-
+$("#main").append(internationalizeButton);
 

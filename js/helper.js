@@ -13,20 +13,28 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = "<h1 id='name'>%data%</h1>";
-var HTMLheaderRole = "<span>%data%</span><hr/>";
+var HTMLheaderRole = "<span class='role text-left'>%data%</span><hr/>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
-var HTMLmobile = "<li class='flex-item'><span class='orange-text'>mobile</span><span class='white-text'>%data%</span></li>";
+var HTMLmobile = "<img src='%data%' class='social-images' alt='Call'>";
+var HTMLemail = "<img src='%data%' class='social-images' alt='Email'>";
+var HTMLtwitter = "<img src='%data%' class='social-images' alt='Twitter'>";
+var HTMLblog = "<img src='%data%' class='social-images' alt='My Blog'>";
+var HTMLlocation= "<img src='%data%' class='social-images' alt='My Location'>";
+var HTMLlinkedin = "<img src='%data%' class='social-images' alt='Linkedin'>";
+var HTMLgithub = "<img src='%data%' class='social-images' alt='Github'>";
+
+/*var HTMLmobile = "<li class='flex-item'><span class='orange-text'>mobile</span><span class='white-text'>%data%</span></li>";
 var HTMLemail = "<li class='flex-item'><span class='orange-text'>email</span><span class='white-text'>%data%</span></li>";
 var HTMLtwitter = "<li class='flex-item'><span class='orange-text'>twitter</span><span class='white-text'>%data%</span></li>";
 var HTMLgithub = "<li class='flex-item'><span class='orange-text'>github</span><span class='white-text'>%data%</span></li>";
 var HTMLblog = "<li class='flex-item'><span class='orange-text'>blog</span><span class='white-text'>%data%</span></li>";
 var HTMLlocation = "<li class='flex-item'><span class='orange-text'>location</span><span class='white-text'>%data%</span></li>";
-
+*/
 var HTMLbioPic = "<img src='%data%' class='biopic'>";
 var HTMLWelcomeMsg = "<span class='welcome-message'>%data%</span>";
 
-var HTMLskillsStart = "<h3 id='skillsH3'>Skills at a Glance:</h3><ul id='skills' class='flex-box'></ul>";
+var HTMLskillsStart = "<h3 id='skillsH3'>Technical Skills</h3><ul id='skills' class='flex-box'></ul>";
 var HTMLskills = "<li class='flex-item'><span class='white-text'>%data%</span></li>";
 
 var HTMLworkStart = "<div class='work-entry'></div>";
@@ -40,7 +48,7 @@ var HTMLprojectStart = "<div class='project-entry'></div>";
 var HTMLprojectTitle = "<a href='%mylink%'>%data%</a>";
 var HTMLprojectDates = "<div class='date-text'>%data%</div>";
 var HTMLprojectDescription = "<p><br>%data%</p>";
-var HTMLprojectImage = "<img src='%data%'>";
+var HTMLprojectImage = "<img class='projects-image' src='%data%'>";
 
 var HTMLschoolStart = "<div class='education-entry'></div>";
 var HTMLschoolName = "<a href='%mylink%'>%data%";
@@ -129,7 +137,7 @@ function initializeMap() {
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
+    //locations.push(bio.contacts.location);
     
     // iterates through school locations and appends each location to
     // the locations array
@@ -169,6 +177,7 @@ function initializeMap() {
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
     // about a location.
+    var codeString = name + work.jobs.jobTitle;
     var infoWindow = new google.maps.InfoWindow({
       content: name
     });

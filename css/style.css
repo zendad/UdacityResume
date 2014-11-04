@@ -7,17 +7,21 @@
 
 
 .education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 
 h1 {
-
-  font-size: 40px;
   color: #F5A623;
   line-height: 48px;
   display: inline;
+  font-size: 60px;
+  font-family: 'pinyon script', cursive;
+  /*color: #f8981c;*/
+  word-spacing:10px;
+  letter-spacing: .2em;
+  text-shadow:4px 4px 8px red;
 }
 
 h2 {
@@ -46,6 +50,13 @@ h2, h3, h4, h5 {
   padding:10px;
   padding-left: 5%;
   padding-right: 5%;
+}
+
+hr {
+  height: 2px;
+  width: 100%;
+  background-color: #bbb;
+  text-align: left;
 }
 
 
@@ -79,11 +90,29 @@ a {
   display: block;
 }
 
+.role{
+  color: #00BFFF;
+  display: inline;
+  text-align: left;
+  font-size: 30px;
+  font-family: 'Lobster', cursive;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;
   color: #F3F3F3;
   line-height: 28px;
+}
+
+.social-images{
+  width: 70px;
+  height: 70px;
+}
+
+.projects-image{
+  width: 150px;
+  height: 150px;
 }
 
 #skillsH3 {
@@ -142,8 +171,7 @@ ul {
 
 
 .biopic {
-  float: left;
-  padding: 10px;
+  float: right;
   width: 200px;
   display: none;
 }
@@ -195,6 +223,10 @@ span {
   .welcome-message {
     display: none;
   }
+}
+
+.title-super{
+  
 }
 
 #map {

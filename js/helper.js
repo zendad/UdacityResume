@@ -13,51 +13,51 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = "<h1 id='name'>%data%</h1>";
-var HTMLheaderRole = "<span>%data%</span><hr/>";
+var HTMLheaderRole = "<h2 class='role-section'>%data%</h2>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
-var HTMLmobile = "<li class='flex-item'><span class='orange-text'>mobile</span><span class='white-text'>%data%</span></li>";
-var HTMLemail = "<li class='flex-item'><span class='orange-text'>email</span><span class='white-text'>%data%</span></li>";
-var HTMLtwitter = "<li class='flex-item'><span class='orange-text'>twitter</span><span class='white-text'>%data%</span></li>";
-var HTMLgithub = "<li class='flex-item'><span class='orange-text'>github</span><span class='white-text'>%data%</span></li>";
-var HTMLblog = "<li class='flex-item'><span class='orange-text'>blog</span><span class='white-text'>%data%</span></li>";
-var HTMLlocation = "<li class='flex-item'><span class='orange-text'>location</span><span class='white-text'>%data%</span></li>";
+var HTMLmobile ="<li class='social-icon icon-call'><a href='%mylink%'><span class='social-name'>call</span></a></li>"
+var HTMLskype ="<li class='social-icon icon-skype'><a href='%mylink%'><span class='social-name'>skype</span></a></li>"
+var HTMLemail ="<li class='social-icon icon-email'><a href='%mylink%'><span class='social-name'>email</span></a></li>"
+var HTMLlinkedin ="<li class='social-icon icon-linkedin'><a href='%mylink%'><span class='social-name'>linkedin</span></a></li>"
+var HTMLgithub ="<li class='social-icon icon-github'><a href='%mylink%'><span class='social-name'>github</span></a></li>"
+var HTMLblog ="<li class='social-icon icon-blog'><a href='%mylink%'><span class='social-name'>blog</span></a></li>"
+var HTMLtwitter ="<li class='social-icon icon-twitter'><a href='%mylink%'><span class='social-name'>twitter</span></a></li>"
+var HTMLlocation ="<li class='social-icon icon-location'><a href='%mylink%'><span class='social-name'>my location</span></a></li>"
 
-var HTMLbioPic = "<img src='%data%' class='biopic'>";
-var HTMLWelcomeMsg = "<span class='welcome-message'>%data%</span>";
+var HTMLbioPic = "<img src='%data%' class='biopic img-responsive'>";
 
-var HTMLskillsStart = "<h3 id='skillsH3'>Skills at a Glance:</h3><ul id='skills' class='flex-box'></ul>";
-var HTMLskills = "<li class='flex-item'><span class='white-text'>%data%</span></li>";
+var HTMLskillsStart = "<h3 id='skillsH3' class='section-head'>Skills</h3><ul id='skills' class='flex-box'></ul>";
+var HTMLskills = "<li class='flex-item myskill-text'><span>%data%</span></li>";
 
 var HTMLworkStart = "<div class='work-entry'></div>";
-var HTMLworkEmployer = "<a href='#'>%data%";
+var HTMLworkEmployer = "<a href='%mylink%'>%data%";
 var HTMLworkTitle = " - %data%</a>";
 var HTMLworkDates = "<div class='date-text'>%data%</div>";
 var HTMLworkLocation = "<div class='location-text'>%data%</div>";
 var HTMLworkDescription = "<p><br>%data%</p>";
 
 var HTMLprojectStart = "<div class='project-entry'></div>";
-var HTMLprojectTitle = "<a href='#'>%data%</a>";
+var HTMLprojectTitle = "<a href='%mylink%'>%data%</a>";
 var HTMLprojectDates = "<div class='date-text'>%data%</div>";
 var HTMLprojectDescription = "<p><br>%data%</p>";
-var HTMLprojectImage = "<img src='%data%'>";
+var HTMLprojectImage = "<img class='img-responsive' src='%data%'>";
 
 var HTMLschoolStart = "<div class='education-entry'></div>";
-var HTMLschoolName = "<a href='#'>%data%";
+var HTMLschoolName = "<a href='%mylink%'>%data%";
 var HTMLschoolDegree = " -- %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
 var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
 var HTMLschoolMajor = "<em><br>Major: %data%</em>"
 
 var HTMLonlineClasses = "<h3>Online Classes</h3>";
-var HTMLonlineTitle = "<a href='#'>%data%";
+var HTMLonlineTitle = "<a href='%mylink%'>%data%";
 var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
-var HTMLonlineURL = "<br><a href='#'>%data%</a>";
+var HTMLonlineURL = "<br>";
 
 var internationalizeButton = "<button>Internationalize</button>";
 var googleMap = "<div id='map'></div>";
-
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
@@ -68,8 +68,6 @@ $(document).ready(function() {
     $('#name').html(iName);  
   });
 })
-
-
 
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
@@ -87,10 +85,10 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x,y);
 });
-
-
 
 /*
 This is the fun part. Here's where we generate the custom Google Map for the website.
@@ -98,8 +96,6 @@ See the documentation below for more details.
 https://developers.google.com/maps/documentation/javascript/reference
 */
 var map;    // declares a global map variable
-
-
 /*
 Start here! initializeMap() is called when page is loaded.
 */
@@ -114,7 +110,6 @@ function initializeMap() {
   // This next line makes `map` a new Google Map JavaScript Object and attaches it to
   // <div id="map">, which is appended as part of an exercise late in the course.
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -235,11 +230,11 @@ Uncomment all the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window 
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+ map.fitBounds(mapBounds);
+});
